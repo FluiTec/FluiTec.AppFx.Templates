@@ -1,6 +1,7 @@
 ﻿using FluiTec.AppFx.Console.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace simpleconsole;
 
@@ -27,6 +28,6 @@ public class HostedProgram : BaseHostedProgram
     /// <param name="args"> The arguments. </param>
     public override void Run(string[] args)
     {
-
+        Console.WriteLine("Hello World!");
     }
 }
