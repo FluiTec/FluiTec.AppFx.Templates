@@ -24,4 +24,8 @@
 		<Compile Remove="**\*" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="templates\commandconsole\appsettings.json" />
+	</ItemGroup>
+
 </Project>

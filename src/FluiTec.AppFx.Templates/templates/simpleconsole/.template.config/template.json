@@ -2,7 +2,10 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Achim Schnell",
   "classifications": [ "Common", "Console" ],
-  "tags": { "language": "C#", "type": "project" },
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
   "identity": "FluiTec.AppFx.Templates.SimpleConsole",
   "name": "Simple Console Application using DI",
   "shortName": "simpleconsole",
