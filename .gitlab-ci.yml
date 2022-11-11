@@ -1,0 +1,52 @@
+image: mcr.microsoft.com/dotnet/sdk:6.0
+
+stages:
+  - build
+  - unittest
+  - publish
+
+variables:
+    srcDir: "src"
+    projectName: "FluiTec.AppFx.[BLANK]"
+    testfilter: "FullyQualifiedName~FluiTec.AppFx.[BLANK]&FullyQualifiedName~.Tests"
+    GIT_SUBMODULE_STRATEGY: recursive
+    
+before_script:
+  - git submodule sync --recursive
+  - git submodule update --init --recursive
+  - cd $srcDir
+  - dotnet restore --verbosity minimal
+
+build:
+  stage: build
+  script:
+    - dotnet build --no-restore
+        
+unittest:
+  stage: unittest
+  script:
+    - dotnet test --no-restore --verbosity minimal --filter $testfilter
+
+publish-baget:
+  stage: publish
+  only:
+    refs:
+      - master
+  script:
+    - cd ..
+    - NUGET_VERSION=$(cat .version)
+    - cd $srcDir
+    - dotnet build -c Release /p:Version="$NUGET_VERSION"
+    - dotnet nuget push -s "$BAGET_URL" -k "$BAGET_KEY" **/*.nupkg --skip-duplicate
+
+publish-nuget:
+  stage: publish
+  only:
+    refs:
+      - master
+  script:
+    - cd ..
+    - NUGET_VERSION=$(cat .version)
+    - cd $srcDir
+    - dotnet build -c Release /p:Version="$NUGET_VERSION"
+    - dotnet nuget push -s "$NUGET_URL" -k "$NUGET_KEY" **/*.nupkg --skip-duplicate
