@@ -26,6 +26,7 @@
 
 	<ItemGroup>
 	  <None Remove="templates\commandconsole\appsettings.json" />
+	  <None Remove="templates\interactiveconsole\appsettings.json" />
 	</ItemGroup>
 
 </Project>
