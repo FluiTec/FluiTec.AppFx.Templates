@@ -14,7 +14,7 @@
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<ContentTargetFolders>content</ContentTargetFolders>
 
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 	</PropertyGroup>
@@ -22,11 +22,6 @@
 	<ItemGroup>
 		<Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
 		<Compile Remove="**\*" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="templates\commandconsole\appsettings.json" />
-	  <None Remove="templates\interactiveconsole\appsettings.json" />
 	</ItemGroup>
 
 </Project>

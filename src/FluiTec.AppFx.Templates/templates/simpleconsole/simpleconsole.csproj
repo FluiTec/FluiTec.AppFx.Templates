@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluiTec.AppFx.Console" Version="1.1.2" />
+		<PackageReference Include="FluiTec.AppFx.Console" Version="1.2.4" />
 	</ItemGroup>
 
 </Project>

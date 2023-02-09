@@ -3,7 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluiTec.AppFx.Templates", "FluiTec.AppFx.Templates\FluiTec.AppFx.Templates.csproj", "{0B1E88B8-F685-44F2-BF7C-C3529B3C2A82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluiTec.AppFx.Templates", "FluiTec.AppFx.Templates\FluiTec.AppFx.Templates.csproj", "{0B1E88B8-F685-44F2-BF7C-C3529B3C2A82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{ABE7B7B1-79F0-45B7-8C2D-86A40BBE7C53}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE.md = ..\LICENSE.md
+		..\current.version = ..\current.version
+		..\README.md = ..\README.md
+		..\THIRD_PARTY_LICENSES.md = ..\THIRD_PARTY_LICENSES.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{95AC3555-1C00-4D11-8317-DC314706573D}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\build.yml = ..\.github\workflows\build.yml
+		..\.github\workflows\bump.yml = ..\.github\workflows\bump.yml
+		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +34,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{95AC3555-1C00-4D11-8317-DC314706573D} = {ABE7B7B1-79F0-45B7-8C2D-86A40BBE7C53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D77E3CD-B5D4-4F38-A3FB-E86A266B1C05}

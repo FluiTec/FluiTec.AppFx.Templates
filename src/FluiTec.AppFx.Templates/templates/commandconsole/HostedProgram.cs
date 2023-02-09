@@ -14,12 +14,10 @@ public class HostedProgram : BaseHostedCommandProgram
     /// <value> The name. </value>
     public override string Name => "CommandConsole";
 
-    /// <summary>
-    /// Constructor.
-    /// </summary>
-    ///
+    /// <summary>   Constructor. </summary>
     /// <param name="logger">   The logger. </param>
     /// <param name="lifetime"> The lifetime. </param>
+    /// <param name="commands"> The commands. </param>
     public HostedProgram(ILogger<BaseHostedProgram> logger, IHostApplicationLifetime lifetime, IEnumerable<IConsoleCommand> commands)
         : base(logger, lifetime, commands)
     {
